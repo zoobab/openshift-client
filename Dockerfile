@@ -7,4 +7,6 @@ RUN apk add --no-cache ca-certificates
 RUN tar --strip-components=1 -xzvf  /opt/oc/release.tar.gz -C /opt/oc/ && \
     mv /opt/oc/oc /usr/bin/ && \
     rm -rf /opt/oc
+RUN apk add git py-pip
+RUN pip install j2cli>=0.3.5
 EXPOSE 8001
